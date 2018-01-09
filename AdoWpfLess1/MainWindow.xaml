@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Equipment">
+                
+            </TabItem>
+            <TabItem Header="Test Connection">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <WrapPanel Grid.Row="0">
+                        <Label x:Name="ConnectMessage" Margin="30,30,0,0" Width="300"></Label>
+                        <Button Click="ConnectToServerButton_Click" x:Name="ConnectToServerButton" Margin="30,30,0,0">Connect</Button>
+                    </WrapPanel>
+                    <ListView x:Name="ListViewEquipment" Grid.Row="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path= EquipmentId}" Header="Equipment Id"></GridViewColumn>
+                                    <GridViewColumn  DisplayMemberBinding="{Binding Path= GarageRoom}" Header="Garage Room"></GridViewColumn>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
